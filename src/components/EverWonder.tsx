@@ -9,7 +9,7 @@ const EverWonder: React.FC = () => {
       <motion.div
         initial="hidden"
         animate="visible"
-        // whileInView={{ once: true }}
+        
         transition={{ duration: 0.8, once: true }}
         variants={{
           visible: { opacity: 1, scale: 1, x: 0, y: 0 },
@@ -72,7 +72,7 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                // whileInView
+                
                 transition={{ duration: 1, staggerChildren: 0.2, delayChildren: 0.3, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
@@ -88,7 +88,7 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                // whileInView
+               
                 transition={{ duration: 0.8, delay: 0.4, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
@@ -104,7 +104,7 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                // whileInView
+               
                 transition={{ duration: 0.8, delay: 0.4, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
@@ -120,7 +120,7 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                // whileInView
+                
                 transition={{ duration: 0.8, delay: 0.4, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
