@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { motion, useInView } from "framer-motion";
 
 // Define motion variants
@@ -42,13 +42,15 @@ const Test: React.FC = () => {
       </div>
       <motion.div
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        animate="visible"
+        whileInView={{ once: true }}
         variants={textMotionVariants}
         className="pt-3"
       >
         <motion.div
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
+          whileInView={{ once: true }}
           variants={buttonMotionVariants}
           className="pt-3"
         >
