@@ -1,18 +1,16 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import React from "react";
 import Image from "next/image";
 
-
 const EverWonder: React.FC = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   return (
     <section className="mt-16 md:mt-0 lg:mt-32 mb-16 sm:mb-32 md:mb-0 rounded-3xl bg-blue-50 p-2 md:p-10 md:mx-6 lg:mx-24">
       <motion.div
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        transition={{ duration: 0.8, once: true }}
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
         variants={{
           visible: { opacity: 1, scale: 1, x: 0, y: 0 },
           hidden: { opacity: 0, scale: 0.5 },
@@ -73,9 +71,13 @@ const EverWonder: React.FC = () => {
             <div className="h-4 w-4 rounded-full bg-violet-600 z-10 relative">
               <motion.div
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                
-                transition={{ duration: 1, staggerChildren: 0.2, delayChildren: 0.3, once: true }}
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{
+                  duration: 1,
+                  staggerChildren: 0.2,
+                  delayChildren: 0.3,
+                }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0, scale: 0.5 },
@@ -89,9 +91,9 @@ const EverWonder: React.FC = () => {
             <div className="h-4 w-4 rounded-full bg-blue-400 z-10 relative right-10">
               <motion.div
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-               
-                transition={{ duration: 0.8, delay: 0.4, once: true }}
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0.5, scale: 0.5 },
@@ -105,9 +107,9 @@ const EverWonder: React.FC = () => {
             <div className="h-4 w-4 rounded-full bg-yellow-400 z-10 relative right-20 md:right-[4.5rem] lg:right-0">
               <motion.div
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-               
-                transition={{ duration: 0.8, delay: 0.4, once: true }}
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0.5, scale: 0.5 },
@@ -121,9 +123,9 @@ const EverWonder: React.FC = () => {
             <div className="h-4 w-4 rounded-full bg-green-400 z-10 relative hidden md:block md:right-28 lg:right-0">
               <motion.div
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                
-                transition={{ duration: 0.8, delay: 0.4, once: true }}
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0.5, scale: 0.5 },

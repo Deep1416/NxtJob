@@ -1,7 +1,7 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
@@ -17,8 +17,6 @@ const customAnimation = keyframes`
 `;
 
 const Self: React.FC = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false);
   const [isMediumScreen, setIsMediumScreen] = useState<boolean>(false); // New state for 1024px
@@ -31,6 +29,7 @@ const Self: React.FC = () => {
       setIsMediumScreen(width <= 1024); // Set medium screen size
     };
 
+    
     // Update screen size on initial render
     updateScreenSize();
 
@@ -74,7 +73,8 @@ const Self: React.FC = () => {
         <motion.div
           className="inline-block"
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          whileInView="visible"
+        viewport={{ once: true }}
           variants={textMotionVariants}
           transition={{ duration: 1.9, type: "spring", bounce: 0.1 }}
         >
@@ -88,7 +88,9 @@ const Self: React.FC = () => {
         <motion.div
           className="flex items-center justify-center"
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          whileInView="visible"
+        viewport={{ once: true }}
+          variants={imageMotionVariants}
           transition={{
             duration: 2.1,
             ease: "easeInOut",

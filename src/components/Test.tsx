@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 // Define motion variants
 const textMotionVariants = {
@@ -22,8 +22,6 @@ const buttonMotionVariants = {
 
 // Define the functional component with React.FC type
 const Test: React.FC = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   return (
     <section className="mt-10 sm:mt-20 flex flex-col gap-3 text-center p-8">
       <p className="text-center font-semibold">We take privacy seriously</p>
@@ -42,15 +40,15 @@ const Test: React.FC = () => {
       </div>
       <motion.div
         initial="hidden"
-        animate="visible"
-        whileInView={{ once: true }}
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={textMotionVariants}
         className="pt-3"
       >
         <motion.div
           initial="hidden"
-          animate="visible"
-          whileInView={{ once: true }}
+          whileInView="visible"
+          viewport={{ once: true }}
           variants={buttonMotionVariants}
           className="pt-3"
         >
