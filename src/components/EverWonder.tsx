@@ -9,8 +9,8 @@ const EverWonder: React.FC = () => {
       <motion.div
         initial="hidden"
         animate="visible"
-        whileInView={{ once: true }}
-        transition={{ duration: 0.8 }}
+        // whileInView={{ once: true }}
+        transition={{ duration: 0.8, once: true }}
         variants={{
           visible: { opacity: 1, scale: 1, x: 0, y: 0 },
           hidden: { opacity: 0, scale: 0.5 },
@@ -72,8 +72,8 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                whileInView={{ once: true }}
-                transition={{ duration: 1, staggerChildren: 0.2, delayChildren: 0.3 }}
+                // whileInView
+                transition={{ duration: 1, staggerChildren: 0.2, delayChildren: 0.3, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0, scale: 0.5 },
@@ -88,8 +88,8 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                whileInView={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                // whileInView
+                transition={{ duration: 0.8, delay: 0.4, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0.5, scale: 0.5 },
@@ -104,8 +104,8 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                whileInView={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                // whileInView
+                transition={{ duration: 0.8, delay: 0.4, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0.5, scale: 0.5 },
@@ -120,8 +120,8 @@ const EverWonder: React.FC = () => {
               <motion.div
                 initial="hidden"
                 animate="visible"
-                whileInView={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                // whileInView
+                transition={{ duration: 0.8, delay: 0.4, once: true }}
                 variants={{
                   visible: { opacity: 1, scale: 1, x: 0, y: 0 },
                   hidden: { opacity: 0.5, scale: 0.5 },
