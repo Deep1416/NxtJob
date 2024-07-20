@@ -41,5 +41,5 @@ This project is part of the application for the Frontend UI Intern position at N
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Stutimaha/Ahead-App-Redesign
+   git clone [https://github.com/Deep1416/NxtJob]
    cd Ahead-App-Redesign
