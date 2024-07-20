@@ -12,7 +12,7 @@ This project is part of the application for the Frontend UI Intern position at N
 
 ## Deployment 🚀
 
-- The project is deployed and can be accessed [here](#https://nxt-job-woad.vercel.app/).
+- The project is deployed and can be accessed [here](#[https://nxt-job-zeta.vercel.app/]).
 
 
 
