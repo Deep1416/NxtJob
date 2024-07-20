@@ -45,3 +45,17 @@ This project is part of the application for the Frontend UI Intern position at N
    ```bash
    git clone https://github.com/Deep1416/NxtJob
    cd NxtJob
+   ## How to Run▶️
+
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+
+3. Run the development server:
+
+   ```bash
+   npm run dev
+
+4. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the application.
