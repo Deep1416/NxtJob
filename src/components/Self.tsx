@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
@@ -17,6 +17,8 @@ const customAnimation = keyframes`
 `;
 
 const Self: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false);
   const [isMediumScreen, setIsMediumScreen] = useState<boolean>(false); // New state for 1024px
@@ -72,8 +74,7 @@ const Self: React.FC = () => {
         <motion.div
           className="inline-block"
           initial="hidden"
-          animate="visible"
-          whileInView={{ once: true }}
+          animate={isInView ? "visible" : "hidden"}
           variants={textMotionVariants}
           transition={{ duration: 1.9, type: "spring", bounce: 0.1 }}
         >
@@ -87,9 +88,7 @@ const Self: React.FC = () => {
         <motion.div
           className="flex items-center justify-center"
           initial="hidden"
-          animate="visible"
-          whileInView={{ once: true }}
-          variants={imageMotionVariants}
+          animate={isInView ? "visible" : "hidden"}
           transition={{
             duration: 2.1,
             ease: "easeInOut",
