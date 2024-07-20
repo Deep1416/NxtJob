@@ -12,9 +12,11 @@ This project is part of the application for the Frontend UI Intern position at N
 
 ## Deployment 🚀
 
-- The project is deployed and can be accessed [here](#[https://nxt-job-zeta.vercel.app/]).
+- The project is deployed and can be accessed [here](https://nxt-job-zeta.vercel.app/).
 
+## Video Demonstration 📹
 
+- For a demonstration of the project, please watch the video [here](#).
 
 ## Tech Stack ⚙️
 
@@ -41,5 +43,5 @@ This project is part of the application for the Frontend UI Intern position at N
 
 1. **Clone the repository**:
    ```bash
-   git clone [https://github.com/Deep1416/NxtJob]
-   cd Ahead-App
+   git clone https://github.com/Deep1416/NxtJob
+   cd NxtJob
