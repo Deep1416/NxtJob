@@ -9,7 +9,9 @@ const FamiliarCarousel: React.FC = () => {
   const boxContainerRef = useRef<HTMLDivElement | null>(null);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isMobileScreen, setIsMobileScreen] = useState(false);
-  const [isMediumScreen, setIsMediumScreen] = useState(false); 
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
+  const [is375Screen, setIs375Screen] = useState(false); // State for 375px screen size
+
   // Intersection Observer callback
   const observerCallback = useCallback(
     ([entry]: IntersectionObserverEntry[]) => {
@@ -43,7 +45,8 @@ const FamiliarCarousel: React.FC = () => {
       const width = window.innerWidth;
       setIsSmallScreen(width <= 768);
       setIsMobileScreen(width <= 320);
-      setIsMediumScreen(width <= 1024); // Set medium screen size
+      setIsMediumScreen(width <= 1024);
+      setIs375Screen(width <= 375); // Update for 375px screen size
     };
 
     // Update screen size on initial render
@@ -68,18 +71,22 @@ const FamiliarCarousel: React.FC = () => {
       scale: 1,
       x: isMobileScreen
         ? [0, -50, -150, -200, -60]
+        : is375Screen
+        ? [0, -60, -180, -250, -20]
         : isSmallScreen
         ? [0, -100, -300, -450, -130]
         : isMediumScreen
-        ? [0, -80, -200, -300, -100] // Animation for 1024px
+        ? [0, -80, -200, -300, -100]
         : [0, -100, -300, -450, -390],
       y: isMobileScreen ? [10, 5, 2, 0, -5] : [35, 20, 10, 0, -10],
       rotate: isMobileScreen
         ? [-10, -20, -10, -10, -10, -10, -2]
+        : is375Screen
+        ? [-15, -30, -20, -15, -10, -10, -2]
         : isSmallScreen
         ? [-20, -45, -35, -35, -35, -35, -5]
         : isMediumScreen
-        ? [-30, -20, -10, -5, -2] // Rotation for 1024px
+        ? [-30, -20, -10, -5, -2]
         : [-20, -45, -35, -35, -35, -35, -5],
     },
     hidden: { opacity: 0, scale: 0 },
